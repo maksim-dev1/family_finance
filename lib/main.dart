@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:family_finance/app.dart';
+import 'package:family_finance/feature/auth/presentation/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
   const sentryDns = String.fromEnvironment('SENTRY_DSN');
   await SentryFlutter.init(
     (options) {
@@ -19,16 +19,17 @@ Future<void> main() async {
       options.profilesSampleRate = 1.0;
       options.enableAutoSessionTracking =
           true; // Автоматически отслеживает сессии
+      options.debug = false;
       options.attachStacktrace = true; // Добавляет стек вызовов к ошибкам
       options.autoAppStart = true; // Автоматически запускает приложение
     },
-    appRunner: () => runZonedGuarded(
-      () {
-        runApp(App());
-      },
-      (error, stackTrace) async {
-        await Sentry.captureException(error, stackTrace: stackTrace);
-      },
+    
+    appRunner: () => runApp(
+      SentryWidget(
+        child: AuthProvider(
+          child: App(),
+        ),
+      ),
     ),
   );
 }
