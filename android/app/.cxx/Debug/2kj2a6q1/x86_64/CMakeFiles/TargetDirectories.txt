@@ -1,0 +1,2 @@
+C:/Users/maks-/Desktop/projects/my/family_finance/android/app/.cxx/Debug/2kj2a6q1/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/maks-/Desktop/projects/my/family_finance/android/app/.cxx/Debug/2kj2a6q1/x86_64/CMakeFiles/rebuild_cache.dir

@@ -11,11 +11,10 @@ class AuthDataProviderImpl implements IAuthDataProvider {
       : _authHttpApi = authHttpApi;
 
   @override
-  Future<void> login({required AuthLoginRequestDTO authLoginRequest}) async {
+  Future<void> login({required String authLoginRequest}) async {
     try {
       return await _authHttpApi.login(body: authLoginRequest);
     } catch (e, stackTrace) {
-      print('Error $e');
       if (kDebugMode) {
         print(stackTrace);
       }
@@ -25,10 +24,9 @@ class AuthDataProviderImpl implements IAuthDataProvider {
   }
 
   @override
-  Future<AuthResponseDTO> logout(
-      {required RefreshTokenDTO refreshToken}) async {
+  Future<AuthTokenDTO> logout({required String token}) async {
     try {
-      final response = await _authHttpApi.logout(body: refreshToken);
+      final response = await _authHttpApi.logout(body: token);
       return response;
     } catch (e, stackTrace) {
       if (kDebugMode) {
@@ -40,8 +38,7 @@ class AuthDataProviderImpl implements IAuthDataProvider {
   }
 
   @override
-  Future<AuthResponseDTO> refreshToken(
-      {required RefreshTokenDTO refreshToken}) async {
+  Future<AuthTokenDTO> refreshToken({required String refreshToken}) async {
     try {
       final response = await _authHttpApi.refreshToken(body: refreshToken);
       return response;
@@ -69,7 +66,7 @@ class AuthDataProviderImpl implements IAuthDataProvider {
   }
 
   @override
-  Future<AuthResponseDTO> verify(
+  Future<AuthTokenDTO> verify(
       {required AuthVerifeRequestDTO authVerifeRequest}) async {
     try {
       final response = await _authHttpApi.verify(body: authVerifeRequest);

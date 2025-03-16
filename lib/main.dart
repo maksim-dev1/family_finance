@@ -8,6 +8,11 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   const sentryDns = String.fromEnvironment('SENTRY_DSN');
+    print(
+      "BASE_URL: ${String.fromEnvironment('BASE_URL', defaultValue: 'НЕ ЗАДАНО')}");
+
+  print(
+      "SENTRY_DSN: ${String.fromEnvironment('SENTRY_DSN', defaultValue: 'НЕ ЗАДАНО')}");
   await SentryFlutter.init(
     (options) {
       options.dsn = sentryDns;
@@ -23,7 +28,6 @@ Future<void> main() async {
       options.attachStacktrace = true; // Добавляет стек вызовов к ошибкам
       options.autoAppStart = true; // Автоматически запускает приложение
     },
-    
     appRunner: () => runApp(
       SentryWidget(
         child: AuthProvider(

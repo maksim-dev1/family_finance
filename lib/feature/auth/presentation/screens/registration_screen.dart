@@ -6,7 +6,6 @@ import 'package:family_finance/feature/auth/presentation/widgets/custom_text_fie
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});

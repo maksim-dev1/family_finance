@@ -20,18 +20,6 @@ Map<String, dynamic> _$$AuthRegisterRequestDTOImplToJson(
       'email': instance.email,
     };
 
-_$AuthLoginRequestDTOImpl _$$AuthLoginRequestDTOImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AuthLoginRequestDTOImpl(
-      email: json['email'] as String,
-    );
-
-Map<String, dynamic> _$$AuthLoginRequestDTOImplToJson(
-        _$AuthLoginRequestDTOImpl instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-    };
-
 _$AuthVerifeRequestDTOImpl _$$AuthVerifeRequestDTOImplFromJson(
         Map<String, dynamic> json) =>
     _$AuthVerifeRequestDTOImpl(
@@ -46,28 +34,14 @@ Map<String, dynamic> _$$AuthVerifeRequestDTOImplToJson(
       'code': instance.code,
     };
 
-_$AuthResponseDTOImpl _$$AuthResponseDTOImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AuthResponseDTOImpl(
+_$AuthTokenDTOImpl _$$AuthTokenDTOImplFromJson(Map<String, dynamic> json) =>
+    _$AuthTokenDTOImpl(
       accessToken: json['access_token'] as String,
       refreshToken: json['refresh_token'] as String,
     );
 
-Map<String, dynamic> _$$AuthResponseDTOImplToJson(
-        _$AuthResponseDTOImpl instance) =>
+Map<String, dynamic> _$$AuthTokenDTOImplToJson(_$AuthTokenDTOImpl instance) =>
     <String, dynamic>{
       'access_token': instance.accessToken,
-      'refresh_token': instance.refreshToken,
-    };
-
-_$RefreshTokenDTOImpl _$$RefreshTokenDTOImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RefreshTokenDTOImpl(
-      refreshToken: json['refresh_token'] as String,
-    );
-
-Map<String, dynamic> _$$RefreshTokenDTOImplToJson(
-        _$RefreshTokenDTOImpl instance) =>
-    <String, dynamic>{
       'refresh_token': instance.refreshToken,
     };

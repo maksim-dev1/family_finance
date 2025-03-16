@@ -21,7 +21,7 @@ mixin _$AuthEvent {
     required TResult Function() checkAuth,
     required TResult Function(AuthRegisterRequestEntity authRegisterRequest)
         registration,
-    required TResult Function(AuthLoginRequestEntity authLoginRequest) login,
+    required TResult Function(String authLoginRequest) login,
     required TResult Function(AuthVerifeRequestEntity authVerifeRequest) verify,
     required TResult Function() logout,
   }) =>
@@ -31,7 +31,7 @@ mixin _$AuthEvent {
     TResult? Function()? checkAuth,
     TResult? Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult? Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult? Function(String authLoginRequest)? login,
     TResult? Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult? Function()? logout,
   }) =>
@@ -41,7 +41,7 @@ mixin _$AuthEvent {
     TResult Function()? checkAuth,
     TResult Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult Function(String authLoginRequest)? login,
     TResult Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult Function()? logout,
     required TResult orElse(),
@@ -141,7 +141,7 @@ class _$CheckAuthImpl implements _CheckAuth {
     required TResult Function() checkAuth,
     required TResult Function(AuthRegisterRequestEntity authRegisterRequest)
         registration,
-    required TResult Function(AuthLoginRequestEntity authLoginRequest) login,
+    required TResult Function(String authLoginRequest) login,
     required TResult Function(AuthVerifeRequestEntity authVerifeRequest) verify,
     required TResult Function() logout,
   }) {
@@ -154,7 +154,7 @@ class _$CheckAuthImpl implements _CheckAuth {
     TResult? Function()? checkAuth,
     TResult? Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult? Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult? Function(String authLoginRequest)? login,
     TResult? Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult? Function()? logout,
   }) {
@@ -167,7 +167,7 @@ class _$CheckAuthImpl implements _CheckAuth {
     TResult Function()? checkAuth,
     TResult Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult Function(String authLoginRequest)? login,
     TResult Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult Function()? logout,
     required TResult orElse(),
@@ -308,7 +308,7 @@ class _$RegistrationImpl implements _Registration {
     required TResult Function() checkAuth,
     required TResult Function(AuthRegisterRequestEntity authRegisterRequest)
         registration,
-    required TResult Function(AuthLoginRequestEntity authLoginRequest) login,
+    required TResult Function(String authLoginRequest) login,
     required TResult Function(AuthVerifeRequestEntity authVerifeRequest) verify,
     required TResult Function() logout,
   }) {
@@ -321,7 +321,7 @@ class _$RegistrationImpl implements _Registration {
     TResult? Function()? checkAuth,
     TResult? Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult? Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult? Function(String authLoginRequest)? login,
     TResult? Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult? Function()? logout,
   }) {
@@ -334,7 +334,7 @@ class _$RegistrationImpl implements _Registration {
     TResult Function()? checkAuth,
     TResult Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult Function(String authLoginRequest)? login,
     TResult Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult Function()? logout,
     required TResult orElse(),
@@ -406,9 +406,7 @@ abstract class _$$LoginImplCopyWith<$Res> {
           _$LoginImpl value, $Res Function(_$LoginImpl) then) =
       __$$LoginImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AuthLoginRequestEntity authLoginRequest});
-
-  $AuthLoginRequestEntityCopyWith<$Res> get authLoginRequest;
+  $Res call({String authLoginRequest});
 }
 
 /// @nodoc
@@ -430,19 +428,8 @@ class __$$LoginImplCopyWithImpl<$Res>
       authLoginRequest: null == authLoginRequest
           ? _value.authLoginRequest
           : authLoginRequest // ignore: cast_nullable_to_non_nullable
-              as AuthLoginRequestEntity,
+              as String,
     ));
-  }
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AuthLoginRequestEntityCopyWith<$Res> get authLoginRequest {
-    return $AuthLoginRequestEntityCopyWith<$Res>(_value.authLoginRequest,
-        (value) {
-      return _then(_value.copyWith(authLoginRequest: value));
-    });
   }
 }
 
@@ -452,7 +439,7 @@ class _$LoginImpl implements _Login {
   const _$LoginImpl({required this.authLoginRequest});
 
   @override
-  final AuthLoginRequestEntity authLoginRequest;
+  final String authLoginRequest;
 
   @override
   String toString() {
@@ -485,7 +472,7 @@ class _$LoginImpl implements _Login {
     required TResult Function() checkAuth,
     required TResult Function(AuthRegisterRequestEntity authRegisterRequest)
         registration,
-    required TResult Function(AuthLoginRequestEntity authLoginRequest) login,
+    required TResult Function(String authLoginRequest) login,
     required TResult Function(AuthVerifeRequestEntity authVerifeRequest) verify,
     required TResult Function() logout,
   }) {
@@ -498,7 +485,7 @@ class _$LoginImpl implements _Login {
     TResult? Function()? checkAuth,
     TResult? Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult? Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult? Function(String authLoginRequest)? login,
     TResult? Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult? Function()? logout,
   }) {
@@ -511,7 +498,7 @@ class _$LoginImpl implements _Login {
     TResult Function()? checkAuth,
     TResult Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult Function(String authLoginRequest)? login,
     TResult Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult Function()? logout,
     required TResult orElse(),
@@ -564,10 +551,9 @@ class _$LoginImpl implements _Login {
 }
 
 abstract class _Login implements AuthEvent {
-  const factory _Login(
-      {required final AuthLoginRequestEntity authLoginRequest}) = _$LoginImpl;
+  const factory _Login({required final String authLoginRequest}) = _$LoginImpl;
 
-  AuthLoginRequestEntity get authLoginRequest;
+  String get authLoginRequest;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -661,7 +647,7 @@ class _$VerifyImpl implements _Verify {
     required TResult Function() checkAuth,
     required TResult Function(AuthRegisterRequestEntity authRegisterRequest)
         registration,
-    required TResult Function(AuthLoginRequestEntity authLoginRequest) login,
+    required TResult Function(String authLoginRequest) login,
     required TResult Function(AuthVerifeRequestEntity authVerifeRequest) verify,
     required TResult Function() logout,
   }) {
@@ -674,7 +660,7 @@ class _$VerifyImpl implements _Verify {
     TResult? Function()? checkAuth,
     TResult? Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult? Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult? Function(String authLoginRequest)? login,
     TResult? Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult? Function()? logout,
   }) {
@@ -687,7 +673,7 @@ class _$VerifyImpl implements _Verify {
     TResult Function()? checkAuth,
     TResult Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult Function(String authLoginRequest)? login,
     TResult Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult Function()? logout,
     required TResult orElse(),
@@ -797,7 +783,7 @@ class _$LogoutImpl implements _Logout {
     required TResult Function() checkAuth,
     required TResult Function(AuthRegisterRequestEntity authRegisterRequest)
         registration,
-    required TResult Function(AuthLoginRequestEntity authLoginRequest) login,
+    required TResult Function(String authLoginRequest) login,
     required TResult Function(AuthVerifeRequestEntity authVerifeRequest) verify,
     required TResult Function() logout,
   }) {
@@ -810,7 +796,7 @@ class _$LogoutImpl implements _Logout {
     TResult? Function()? checkAuth,
     TResult? Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult? Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult? Function(String authLoginRequest)? login,
     TResult? Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult? Function()? logout,
   }) {
@@ -823,7 +809,7 @@ class _$LogoutImpl implements _Logout {
     TResult Function()? checkAuth,
     TResult Function(AuthRegisterRequestEntity authRegisterRequest)?
         registration,
-    TResult Function(AuthLoginRequestEntity authLoginRequest)? login,
+    TResult Function(String authLoginRequest)? login,
     TResult Function(AuthVerifeRequestEntity authVerifeRequest)? verify,
     TResult Function()? logout,
     required TResult orElse(),
@@ -887,6 +873,7 @@ mixin _$AuthState {
     required TResult Function() loading,
     required TResult Function() auntificatid,
     required TResult Function() unAuntificatid,
+    required TResult Function(String error) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -895,6 +882,7 @@ mixin _$AuthState {
     TResult? Function()? loading,
     TResult? Function()? auntificatid,
     TResult? Function()? unAuntificatid,
+    TResult? Function(String error)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -903,6 +891,7 @@ mixin _$AuthState {
     TResult Function()? loading,
     TResult Function()? auntificatid,
     TResult Function()? unAuntificatid,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -912,6 +901,7 @@ mixin _$AuthState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Auntificatid value) auntificatid,
     required TResult Function(_UnAuntificatid value) unAuntificatid,
+    required TResult Function(_Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -920,6 +910,7 @@ mixin _$AuthState {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Auntificatid value)? auntificatid,
     TResult? Function(_UnAuntificatid value)? unAuntificatid,
+    TResult? Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -928,6 +919,7 @@ mixin _$AuthState {
     TResult Function(_Loading value)? loading,
     TResult Function(_Auntificatid value)? auntificatid,
     TResult Function(_UnAuntificatid value)? unAuntificatid,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -998,6 +990,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function() auntificatid,
     required TResult Function() unAuntificatid,
+    required TResult Function(String error) failure,
   }) {
     return initial();
   }
@@ -1009,6 +1002,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function()? auntificatid,
     TResult? Function()? unAuntificatid,
+    TResult? Function(String error)? failure,
   }) {
     return initial?.call();
   }
@@ -1020,6 +1014,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function()? auntificatid,
     TResult Function()? unAuntificatid,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1035,6 +1030,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Auntificatid value) auntificatid,
     required TResult Function(_UnAuntificatid value) unAuntificatid,
+    required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
   }
@@ -1046,6 +1042,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Auntificatid value)? auntificatid,
     TResult? Function(_UnAuntificatid value)? unAuntificatid,
+    TResult? Function(_Failure value)? failure,
   }) {
     return initial?.call(this);
   }
@@ -1057,6 +1054,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_Auntificatid value)? auntificatid,
     TResult Function(_UnAuntificatid value)? unAuntificatid,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1115,6 +1113,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() loading,
     required TResult Function() auntificatid,
     required TResult Function() unAuntificatid,
+    required TResult Function(String error) failure,
   }) {
     return loading();
   }
@@ -1126,6 +1125,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? loading,
     TResult? Function()? auntificatid,
     TResult? Function()? unAuntificatid,
+    TResult? Function(String error)? failure,
   }) {
     return loading?.call();
   }
@@ -1137,6 +1137,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? loading,
     TResult Function()? auntificatid,
     TResult Function()? unAuntificatid,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1152,6 +1153,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Auntificatid value) auntificatid,
     required TResult Function(_UnAuntificatid value) unAuntificatid,
+    required TResult Function(_Failure value) failure,
   }) {
     return loading(this);
   }
@@ -1163,6 +1165,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Auntificatid value)? auntificatid,
     TResult? Function(_UnAuntificatid value)? unAuntificatid,
+    TResult? Function(_Failure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -1174,6 +1177,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_Auntificatid value)? auntificatid,
     TResult Function(_UnAuntificatid value)? unAuntificatid,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1232,6 +1236,7 @@ class _$AuntificatidImpl implements _Auntificatid {
     required TResult Function() loading,
     required TResult Function() auntificatid,
     required TResult Function() unAuntificatid,
+    required TResult Function(String error) failure,
   }) {
     return auntificatid();
   }
@@ -1243,6 +1248,7 @@ class _$AuntificatidImpl implements _Auntificatid {
     TResult? Function()? loading,
     TResult? Function()? auntificatid,
     TResult? Function()? unAuntificatid,
+    TResult? Function(String error)? failure,
   }) {
     return auntificatid?.call();
   }
@@ -1254,6 +1260,7 @@ class _$AuntificatidImpl implements _Auntificatid {
     TResult Function()? loading,
     TResult Function()? auntificatid,
     TResult Function()? unAuntificatid,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (auntificatid != null) {
@@ -1269,6 +1276,7 @@ class _$AuntificatidImpl implements _Auntificatid {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Auntificatid value) auntificatid,
     required TResult Function(_UnAuntificatid value) unAuntificatid,
+    required TResult Function(_Failure value) failure,
   }) {
     return auntificatid(this);
   }
@@ -1280,6 +1288,7 @@ class _$AuntificatidImpl implements _Auntificatid {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Auntificatid value)? auntificatid,
     TResult? Function(_UnAuntificatid value)? unAuntificatid,
+    TResult? Function(_Failure value)? failure,
   }) {
     return auntificatid?.call(this);
   }
@@ -1291,6 +1300,7 @@ class _$AuntificatidImpl implements _Auntificatid {
     TResult Function(_Loading value)? loading,
     TResult Function(_Auntificatid value)? auntificatid,
     TResult Function(_UnAuntificatid value)? unAuntificatid,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
     if (auntificatid != null) {
@@ -1349,6 +1359,7 @@ class _$UnAuntificatidImpl implements _UnAuntificatid {
     required TResult Function() loading,
     required TResult Function() auntificatid,
     required TResult Function() unAuntificatid,
+    required TResult Function(String error) failure,
   }) {
     return unAuntificatid();
   }
@@ -1360,6 +1371,7 @@ class _$UnAuntificatidImpl implements _UnAuntificatid {
     TResult? Function()? loading,
     TResult? Function()? auntificatid,
     TResult? Function()? unAuntificatid,
+    TResult? Function(String error)? failure,
   }) {
     return unAuntificatid?.call();
   }
@@ -1371,6 +1383,7 @@ class _$UnAuntificatidImpl implements _UnAuntificatid {
     TResult Function()? loading,
     TResult Function()? auntificatid,
     TResult Function()? unAuntificatid,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (unAuntificatid != null) {
@@ -1386,6 +1399,7 @@ class _$UnAuntificatidImpl implements _UnAuntificatid {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Auntificatid value) auntificatid,
     required TResult Function(_UnAuntificatid value) unAuntificatid,
+    required TResult Function(_Failure value) failure,
   }) {
     return unAuntificatid(this);
   }
@@ -1397,6 +1411,7 @@ class _$UnAuntificatidImpl implements _UnAuntificatid {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Auntificatid value)? auntificatid,
     TResult? Function(_UnAuntificatid value)? unAuntificatid,
+    TResult? Function(_Failure value)? failure,
   }) {
     return unAuntificatid?.call(this);
   }
@@ -1408,6 +1423,7 @@ class _$UnAuntificatidImpl implements _UnAuntificatid {
     TResult Function(_Loading value)? loading,
     TResult Function(_Auntificatid value)? auntificatid,
     TResult Function(_UnAuntificatid value)? unAuntificatid,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
     if (unAuntificatid != null) {
@@ -1419,4 +1435,162 @@ class _$UnAuntificatidImpl implements _UnAuntificatid {
 
 abstract class _UnAuntificatid implements AuthState {
   const factory _UnAuntificatid() = _$UnAuntificatidImpl;
+}
+
+/// @nodoc
+abstract class _$$FailureImplCopyWith<$Res> {
+  factory _$$FailureImplCopyWith(
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$FailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$FailureImpl>
+    implements _$$FailureImplCopyWith<$Res> {
+  __$$FailureImplCopyWithImpl(
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$FailureImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailureImpl implements _Failure {
+  const _$FailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'AuthState.failure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailureImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() auntificatid,
+    required TResult Function() unAuntificatid,
+    required TResult Function(String error) failure,
+  }) {
+    return failure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? auntificatid,
+    TResult? Function()? unAuntificatid,
+    TResult? Function(String error)? failure,
+  }) {
+    return failure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? auntificatid,
+    TResult Function()? unAuntificatid,
+    TResult Function(String error)? failure,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Auntificatid value) auntificatid,
+    required TResult Function(_UnAuntificatid value) unAuntificatid,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Auntificatid value)? auntificatid,
+    TResult? Function(_UnAuntificatid value)? unAuntificatid,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return failure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Auntificatid value)? auntificatid,
+    TResult Function(_UnAuntificatid value)? unAuntificatid,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Failure implements AuthState {
+  const factory _Failure({required final String error}) = _$FailureImpl;
+
+  String get error;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

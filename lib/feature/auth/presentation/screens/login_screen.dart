@@ -1,5 +1,4 @@
 import 'package:family_finance/feature/auth/bloc/auth_bloc.dart';
-import 'package:family_finance/feature/auth/domain/entities/auth_entity.dart';
 import 'package:family_finance/feature/auth/presentation/screens/pin_code_screen.dart';
 import 'package:family_finance/feature/auth/presentation/screens/registration_screen.dart';
 import 'package:family_finance/feature/auth/presentation/widgets/custom_text_field.dart';
@@ -117,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     context.read<AuthBloc>().add(
                           AuthEvent.login(
-                            authLoginRequest: AuthLoginRequestEntity(email: emailController.text)
+                            authLoginRequest:emailController.text
                           ),
                         );
                     Navigator.push(

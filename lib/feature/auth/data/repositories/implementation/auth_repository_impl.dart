@@ -12,33 +12,42 @@ class AuthRepositoryImpl implements IAuthRepository {
       : _authDataProvider = authDataProvider;
 
   @override
-  Future<void> login({required AuthLoginRequestEntity authLoginRequest}) async {
-    final authLoginRequestDto = AuthLoginDTOMapper.fromEntity(entity: authLoginRequest);
-    return await _authDataProvider.login(authLoginRequest: authLoginRequestDto);
+  Future<void> login({required String authLoginRequest}) async {
+    return await _authDataProvider.login(authLoginRequest: authLoginRequest);
   }
 
   @override
-  Future<AuthResponseDTO> logout(
-      {required RefreshTokenDTO refreshToken}) async {
-    return await _authDataProvider.logout(refreshToken: refreshToken);
+  Future<AuthTokenDTO> logout({required String token}) async {
+    return await _authDataProvider.logout(token: token);
   }
 
   @override
-  Future<AuthResponseDTO> refreshToken(
-      {required RefreshTokenDTO refreshToken}) async {
-    return await _authDataProvider.refreshToken(refreshToken: refreshToken);
+  Future<AuthTokenEntity> refreshToken({required String refreshToken}) async {
+    final authTokenDto =
+        await _authDataProvider.refreshToken(refreshToken: refreshToken);
+    final authTokenEntity = AuthTokenDTOMapper.toEntity(dto: authTokenDto);
+
+    return authTokenEntity;
   }
 
   @override
-  Future<void> register({required AuthRegisterRequestEntity authRegisterRequest}) async {
-    final authRegisterRequestDto = AuthRegisterDTOMapper.fromEntity(entity: authRegisterRequest);
-    return await _authDataProvider.register(authRegisterRequest: authRegisterRequestDto);
+  Future<void> register(
+      {required AuthRegisterRequestEntity authRegisterRequest}) async {
+    final authRegisterRequestDto =
+        AuthRegisterDTOMapper.fromEntity(entity: authRegisterRequest);
+    return await _authDataProvider.register(
+        authRegisterRequest: authRegisterRequestDto);
   }
 
   @override
-  Future<AuthResponseDTO> verify(
+  Future<AuthTokenEntity> verify(
       {required AuthVerifeRequestEntity authVerifeRequest}) async {
-    final authVerifeRequestDto = AuthVerifeDTOMapper.fromEntity(entity: authVerifeRequest);
-    return await _authDataProvider.verify(authVerifeRequest: authVerifeRequestDto);
+    final authVerifeRequestDto =
+        AuthVerifeDTOMapper.fromEntity(entity: authVerifeRequest);
+
+    final authTokenDto =
+        await _authDataProvider.verify(authVerifeRequest: authVerifeRequestDto);
+    final authTokenEntity = AuthTokenDTOMapper.toEntity(dto: authTokenDto);
+    return authTokenEntity;
   }
 }

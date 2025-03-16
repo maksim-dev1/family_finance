@@ -26,8 +26,8 @@ class AuthProvider extends StatelessWidget {
         create: (context) {
           final tokenStorage = context.read<TokenStorage>();
           return Dio()
-            ..options.baseUrl = 'http://31.207.198.113:8080'
-            // ..options.baseUrl = String.fromEnvironment('BASE_URL')
+            ..options.baseUrl = 'http://31.207.198.113:8080/api/v1'
+            // ..options.baseUrl = String.fromEnvironment('BASE_URL', defaultValue: '')
             ..options.headers['Content-Type'] = 'application/json'
             ..interceptors.add(
               TokenInterceptor(
@@ -60,8 +60,8 @@ class AuthProvider extends StatelessWidget {
                       authRepository: context.read<IAuthRepository>(),
                       tokenStorage: context.read<TokenStorage>(),
                     )..add(
-                      AuthEvent.checkAuth(),
-                    ),
+                        AuthEvent.checkAuth(),
+                      ),
                     child: child,
                   );
                 },
