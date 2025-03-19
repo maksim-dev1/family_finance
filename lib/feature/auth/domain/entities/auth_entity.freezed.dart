@@ -467,3 +467,273 @@ abstract class _AuthTokenEntity implements AuthTokenEntity {
   _$$AuthTokenEntityImplCopyWith<_$AuthTokenEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$AuthLoginRequestEntity {
+  String get email => throw _privateConstructorUsedError;
+
+  /// Create a copy of AuthLoginRequestEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AuthLoginRequestEntityCopyWith<AuthLoginRequestEntity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AuthLoginRequestEntityCopyWith<$Res> {
+  factory $AuthLoginRequestEntityCopyWith(AuthLoginRequestEntity value,
+          $Res Function(AuthLoginRequestEntity) then) =
+      _$AuthLoginRequestEntityCopyWithImpl<$Res, AuthLoginRequestEntity>;
+  @useResult
+  $Res call({String email});
+}
+
+/// @nodoc
+class _$AuthLoginRequestEntityCopyWithImpl<$Res,
+        $Val extends AuthLoginRequestEntity>
+    implements $AuthLoginRequestEntityCopyWith<$Res> {
+  _$AuthLoginRequestEntityCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AuthLoginRequestEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_value.copyWith(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AuthLoginRequestEntityImplCopyWith<$Res>
+    implements $AuthLoginRequestEntityCopyWith<$Res> {
+  factory _$$AuthLoginRequestEntityImplCopyWith(
+          _$AuthLoginRequestEntityImpl value,
+          $Res Function(_$AuthLoginRequestEntityImpl) then) =
+      __$$AuthLoginRequestEntityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$$AuthLoginRequestEntityImplCopyWithImpl<$Res>
+    extends _$AuthLoginRequestEntityCopyWithImpl<$Res,
+        _$AuthLoginRequestEntityImpl>
+    implements _$$AuthLoginRequestEntityImplCopyWith<$Res> {
+  __$$AuthLoginRequestEntityImplCopyWithImpl(
+      _$AuthLoginRequestEntityImpl _value,
+      $Res Function(_$AuthLoginRequestEntityImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthLoginRequestEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_$AuthLoginRequestEntityImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AuthLoginRequestEntityImpl implements _AuthLoginRequestEntity {
+  const _$AuthLoginRequestEntityImpl({required this.email});
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'AuthLoginRequestEntity(email: $email)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthLoginRequestEntityImpl &&
+            (identical(other.email, email) || other.email == email));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email);
+
+  /// Create a copy of AuthLoginRequestEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AuthLoginRequestEntityImplCopyWith<_$AuthLoginRequestEntityImpl>
+      get copyWith => __$$AuthLoginRequestEntityImplCopyWithImpl<
+          _$AuthLoginRequestEntityImpl>(this, _$identity);
+}
+
+abstract class _AuthLoginRequestEntity implements AuthLoginRequestEntity {
+  const factory _AuthLoginRequestEntity({required final String email}) =
+      _$AuthLoginRequestEntityImpl;
+
+  @override
+  String get email;
+
+  /// Create a copy of AuthLoginRequestEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AuthLoginRequestEntityImplCopyWith<_$AuthLoginRequestEntityImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$RefreshTokenEntity {
+  @JsonKey(name: 'refresh_token')
+  String get refreshToken => throw _privateConstructorUsedError;
+
+  /// Create a copy of RefreshTokenEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $RefreshTokenEntityCopyWith<RefreshTokenEntity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RefreshTokenEntityCopyWith<$Res> {
+  factory $RefreshTokenEntityCopyWith(
+          RefreshTokenEntity value, $Res Function(RefreshTokenEntity) then) =
+      _$RefreshTokenEntityCopyWithImpl<$Res, RefreshTokenEntity>;
+  @useResult
+  $Res call({@JsonKey(name: 'refresh_token') String refreshToken});
+}
+
+/// @nodoc
+class _$RefreshTokenEntityCopyWithImpl<$Res, $Val extends RefreshTokenEntity>
+    implements $RefreshTokenEntityCopyWith<$Res> {
+  _$RefreshTokenEntityCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of RefreshTokenEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? refreshToken = null,
+  }) {
+    return _then(_value.copyWith(
+      refreshToken: null == refreshToken
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$RefreshTokenEntityImplCopyWith<$Res>
+    implements $RefreshTokenEntityCopyWith<$Res> {
+  factory _$$RefreshTokenEntityImplCopyWith(_$RefreshTokenEntityImpl value,
+          $Res Function(_$RefreshTokenEntityImpl) then) =
+      __$$RefreshTokenEntityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'refresh_token') String refreshToken});
+}
+
+/// @nodoc
+class __$$RefreshTokenEntityImplCopyWithImpl<$Res>
+    extends _$RefreshTokenEntityCopyWithImpl<$Res, _$RefreshTokenEntityImpl>
+    implements _$$RefreshTokenEntityImplCopyWith<$Res> {
+  __$$RefreshTokenEntityImplCopyWithImpl(_$RefreshTokenEntityImpl _value,
+      $Res Function(_$RefreshTokenEntityImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RefreshTokenEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? refreshToken = null,
+  }) {
+    return _then(_$RefreshTokenEntityImpl(
+      refreshToken: null == refreshToken
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RefreshTokenEntityImpl implements _RefreshTokenEntity {
+  const _$RefreshTokenEntityImpl(
+      {@JsonKey(name: 'refresh_token') required this.refreshToken});
+
+  @override
+  @JsonKey(name: 'refresh_token')
+  final String refreshToken;
+
+  @override
+  String toString() {
+    return 'RefreshTokenEntity(refreshToken: $refreshToken)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshTokenEntityImpl &&
+            (identical(other.refreshToken, refreshToken) ||
+                other.refreshToken == refreshToken));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, refreshToken);
+
+  /// Create a copy of RefreshTokenEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshTokenEntityImplCopyWith<_$RefreshTokenEntityImpl> get copyWith =>
+      __$$RefreshTokenEntityImplCopyWithImpl<_$RefreshTokenEntityImpl>(
+          this, _$identity);
+}
+
+abstract class _RefreshTokenEntity implements RefreshTokenEntity {
+  const factory _RefreshTokenEntity(
+      {@JsonKey(name: 'refresh_token')
+      required final String refreshToken}) = _$RefreshTokenEntityImpl;
+
+  @override
+  @JsonKey(name: 'refresh_token')
+  String get refreshToken;
+
+  /// Create a copy of RefreshTokenEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RefreshTokenEntityImplCopyWith<_$RefreshTokenEntityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

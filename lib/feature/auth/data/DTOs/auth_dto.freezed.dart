@@ -538,3 +538,311 @@ abstract class _AuthTokenDTO implements AuthTokenDTO {
   _$$AuthTokenDTOImplCopyWith<_$AuthTokenDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+AuthLoginRequestDTO _$AuthLoginRequestDTOFromJson(Map<String, dynamic> json) {
+  return _AuthLoginRequestDTO.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AuthLoginRequestDTO {
+  String get email => throw _privateConstructorUsedError;
+
+  /// Serializes this AuthLoginRequestDTO to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AuthLoginRequestDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AuthLoginRequestDTOCopyWith<AuthLoginRequestDTO> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AuthLoginRequestDTOCopyWith<$Res> {
+  factory $AuthLoginRequestDTOCopyWith(
+          AuthLoginRequestDTO value, $Res Function(AuthLoginRequestDTO) then) =
+      _$AuthLoginRequestDTOCopyWithImpl<$Res, AuthLoginRequestDTO>;
+  @useResult
+  $Res call({String email});
+}
+
+/// @nodoc
+class _$AuthLoginRequestDTOCopyWithImpl<$Res, $Val extends AuthLoginRequestDTO>
+    implements $AuthLoginRequestDTOCopyWith<$Res> {
+  _$AuthLoginRequestDTOCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AuthLoginRequestDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_value.copyWith(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AuthLoginRequestDTOImplCopyWith<$Res>
+    implements $AuthLoginRequestDTOCopyWith<$Res> {
+  factory _$$AuthLoginRequestDTOImplCopyWith(_$AuthLoginRequestDTOImpl value,
+          $Res Function(_$AuthLoginRequestDTOImpl) then) =
+      __$$AuthLoginRequestDTOImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$$AuthLoginRequestDTOImplCopyWithImpl<$Res>
+    extends _$AuthLoginRequestDTOCopyWithImpl<$Res, _$AuthLoginRequestDTOImpl>
+    implements _$$AuthLoginRequestDTOImplCopyWith<$Res> {
+  __$$AuthLoginRequestDTOImplCopyWithImpl(_$AuthLoginRequestDTOImpl _value,
+      $Res Function(_$AuthLoginRequestDTOImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthLoginRequestDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_$AuthLoginRequestDTOImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AuthLoginRequestDTOImpl implements _AuthLoginRequestDTO {
+  const _$AuthLoginRequestDTOImpl({required this.email});
+
+  factory _$AuthLoginRequestDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthLoginRequestDTOImplFromJson(json);
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'AuthLoginRequestDTO(email: $email)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthLoginRequestDTOImpl &&
+            (identical(other.email, email) || other.email == email));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, email);
+
+  /// Create a copy of AuthLoginRequestDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AuthLoginRequestDTOImplCopyWith<_$AuthLoginRequestDTOImpl> get copyWith =>
+      __$$AuthLoginRequestDTOImplCopyWithImpl<_$AuthLoginRequestDTOImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AuthLoginRequestDTOImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AuthLoginRequestDTO implements AuthLoginRequestDTO {
+  const factory _AuthLoginRequestDTO({required final String email}) =
+      _$AuthLoginRequestDTOImpl;
+
+  factory _AuthLoginRequestDTO.fromJson(Map<String, dynamic> json) =
+      _$AuthLoginRequestDTOImpl.fromJson;
+
+  @override
+  String get email;
+
+  /// Create a copy of AuthLoginRequestDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AuthLoginRequestDTOImplCopyWith<_$AuthLoginRequestDTOImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+RefreshTokenDTO _$RefreshTokenDTOFromJson(Map<String, dynamic> json) {
+  return _RefreshTokenDTO.fromJson(json);
+}
+
+/// @nodoc
+mixin _$RefreshTokenDTO {
+  @JsonKey(name: 'refresh_token')
+  String get refreshToken => throw _privateConstructorUsedError;
+
+  /// Serializes this RefreshTokenDTO to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of RefreshTokenDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $RefreshTokenDTOCopyWith<RefreshTokenDTO> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RefreshTokenDTOCopyWith<$Res> {
+  factory $RefreshTokenDTOCopyWith(
+          RefreshTokenDTO value, $Res Function(RefreshTokenDTO) then) =
+      _$RefreshTokenDTOCopyWithImpl<$Res, RefreshTokenDTO>;
+  @useResult
+  $Res call({@JsonKey(name: 'refresh_token') String refreshToken});
+}
+
+/// @nodoc
+class _$RefreshTokenDTOCopyWithImpl<$Res, $Val extends RefreshTokenDTO>
+    implements $RefreshTokenDTOCopyWith<$Res> {
+  _$RefreshTokenDTOCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of RefreshTokenDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? refreshToken = null,
+  }) {
+    return _then(_value.copyWith(
+      refreshToken: null == refreshToken
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$RefreshTokenDTOImplCopyWith<$Res>
+    implements $RefreshTokenDTOCopyWith<$Res> {
+  factory _$$RefreshTokenDTOImplCopyWith(_$RefreshTokenDTOImpl value,
+          $Res Function(_$RefreshTokenDTOImpl) then) =
+      __$$RefreshTokenDTOImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'refresh_token') String refreshToken});
+}
+
+/// @nodoc
+class __$$RefreshTokenDTOImplCopyWithImpl<$Res>
+    extends _$RefreshTokenDTOCopyWithImpl<$Res, _$RefreshTokenDTOImpl>
+    implements _$$RefreshTokenDTOImplCopyWith<$Res> {
+  __$$RefreshTokenDTOImplCopyWithImpl(
+      _$RefreshTokenDTOImpl _value, $Res Function(_$RefreshTokenDTOImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RefreshTokenDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? refreshToken = null,
+  }) {
+    return _then(_$RefreshTokenDTOImpl(
+      refreshToken: null == refreshToken
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$RefreshTokenDTOImpl implements _RefreshTokenDTO {
+  const _$RefreshTokenDTOImpl(
+      {@JsonKey(name: 'refresh_token') required this.refreshToken});
+
+  factory _$RefreshTokenDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RefreshTokenDTOImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'refresh_token')
+  final String refreshToken;
+
+  @override
+  String toString() {
+    return 'RefreshTokenDTO(refreshToken: $refreshToken)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshTokenDTOImpl &&
+            (identical(other.refreshToken, refreshToken) ||
+                other.refreshToken == refreshToken));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, refreshToken);
+
+  /// Create a copy of RefreshTokenDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshTokenDTOImplCopyWith<_$RefreshTokenDTOImpl> get copyWith =>
+      __$$RefreshTokenDTOImplCopyWithImpl<_$RefreshTokenDTOImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$RefreshTokenDTOImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _RefreshTokenDTO implements RefreshTokenDTO {
+  const factory _RefreshTokenDTO(
+      {@JsonKey(name: 'refresh_token')
+      required final String refreshToken}) = _$RefreshTokenDTOImpl;
+
+  factory _RefreshTokenDTO.fromJson(Map<String, dynamic> json) =
+      _$RefreshTokenDTOImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'refresh_token')
+  String get refreshToken;
+
+  /// Create a copy of RefreshTokenDTO
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RefreshTokenDTOImplCopyWith<_$RefreshTokenDTOImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

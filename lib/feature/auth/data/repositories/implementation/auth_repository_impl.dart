@@ -12,19 +12,21 @@ class AuthRepositoryImpl implements IAuthRepository {
       : _authDataProvider = authDataProvider;
 
   @override
-  Future<void> login({required String authLoginRequest}) async {
-    return await _authDataProvider.login(authLoginRequest: authLoginRequest);
+  Future<void> login({required AuthLoginRequestEntity authLoginRequest}) async {
+    final authLoginRequestDto = AuthLoginRequestDTOMapper.fromEntity(entity: authLoginRequest);
+    return await _authDataProvider.login(authLoginRequest: authLoginRequestDto);
   }
 
   @override
-  Future<AuthTokenDTO> logout({required String token}) async {
-    return await _authDataProvider.logout(token: token);
+  Future<AuthTokenDTO> logout() async {
+    return await _authDataProvider.logout();
   }
 
   @override
-  Future<AuthTokenEntity> refreshToken({required String refreshToken}) async {
+  Future<AuthTokenEntity> refreshToken({required RefreshTokenEntity refreshToken}) async {
+    final refreshTokenDto = RefreshTokenDTOMapper.fromEntity(entity: refreshToken);
     final authTokenDto =
-        await _authDataProvider.refreshToken(refreshToken: refreshToken);
+        await _authDataProvider.refreshToken(refreshToken: refreshTokenDto);
     final authTokenEntity = AuthTokenDTOMapper.toEntity(dto: authTokenDto);
 
     return authTokenEntity;

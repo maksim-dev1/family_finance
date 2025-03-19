@@ -18,9 +18,9 @@ abstract interface class IAuthDataProvider {
   ///
   /// Отправляет учетные данные для входа.
   ///
-  /// - [authLoginRequest] – строка, содержащая данные для авторизации (например, email или имя пользователя).
+  /// - [authLoginRequest] – DTO, содержащая данные для авторизации (email).
   Future<void> login({
-    required String authLoginRequest,
+    required AuthLoginRequestDTO authLoginRequest,
   });
 
   /// Проверяет код подтверждения.
@@ -38,11 +38,11 @@ abstract interface class IAuthDataProvider {
   ///
   /// Используется для получения нового токена по старому refresh-токену.
   ///
-  /// - [refreshToken] – строка, содержащая refresh-токен.
+  /// - [refreshToken] – DTO, содержащая refresh-токен.
   ///
   /// Возвращает [AuthTokenDTO] с обновлёнными токенами.
   Future<AuthTokenDTO> refreshToken({
-    required String refreshToken,
+    required RefreshTokenDTO refreshToken,
   });
 
   /// Выходит из системы.
@@ -52,7 +52,5 @@ abstract interface class IAuthDataProvider {
   /// - [token] – строка, содержащая токен пользователя.
   ///
   /// Возвращает [AuthTokenDTO] с информацией о статусе выхода.
-  Future<AuthTokenDTO> logout({
-    required String token,
-  });
+  Future<AuthTokenDTO> logout();
 }

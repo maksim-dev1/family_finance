@@ -20,7 +20,7 @@ abstract interface class IAuthRepository {
   ///
   /// - [authLoginRequest] – строка с данными для авторизации.
   Future<void> login({
-    required String authLoginRequest,
+    required AuthLoginRequestEntity authLoginRequest,
   });
 
   /// Проверяет код подтверждения.
@@ -42,7 +42,7 @@ abstract interface class IAuthRepository {
   ///
   /// Возвращает объект [AuthTokenEntity] с обновлёнными токенами.
   Future<AuthTokenEntity> refreshToken({
-    required String refreshToken,
+    required RefreshTokenEntity refreshToken,
   });
 
   /// Выполняет выход пользователя из системы.
@@ -50,7 +50,5 @@ abstract interface class IAuthRepository {
   /// Отправляет запрос на логаут, используя текущий токен.
   ///
   /// - [token] – строка, содержащая токен пользователя.
-  Future<void> logout({
-    required String token,
-  });
+  Future<void> logout();
 }

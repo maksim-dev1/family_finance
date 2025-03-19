@@ -45,3 +45,27 @@ Map<String, dynamic> _$$AuthTokenDTOImplToJson(_$AuthTokenDTOImpl instance) =>
       'access_token': instance.accessToken,
       'refresh_token': instance.refreshToken,
     };
+
+_$AuthLoginRequestDTOImpl _$$AuthLoginRequestDTOImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AuthLoginRequestDTOImpl(
+      email: json['email'] as String,
+    );
+
+Map<String, dynamic> _$$AuthLoginRequestDTOImplToJson(
+        _$AuthLoginRequestDTOImpl instance) =>
+    <String, dynamic>{
+      'email': instance.email,
+    };
+
+_$RefreshTokenDTOImpl _$$RefreshTokenDTOImplFromJson(
+        Map<String, dynamic> json) =>
+    _$RefreshTokenDTOImpl(
+      refreshToken: json['refresh_token'] as String,
+    );
+
+Map<String, dynamic> _$$RefreshTokenDTOImplToJson(
+        _$RefreshTokenDTOImpl instance) =>
+    <String, dynamic>{
+      'refresh_token': instance.refreshToken,
+    };

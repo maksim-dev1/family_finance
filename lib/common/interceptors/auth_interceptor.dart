@@ -41,7 +41,7 @@ class AuthInterceptor extends InterceptorsWrapper {
       if (token != null) {
         // Формируем запрос на логаут с использованием refresh-токена.
         try {
-          await _authRepository.logout(token: token);
+          await _authRepository.logout();
         } catch (error) {
           if (kDebugMode) {
             print(error);

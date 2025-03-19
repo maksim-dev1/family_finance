@@ -1,0 +1,2 @@
+C:/Users/maks-/Desktop/projects/my/family_finance/android/app/.cxx/RelWithDebInfo/b2os4w23/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/maks-/Desktop/projects/my/family_finance/android/app/.cxx/RelWithDebInfo/b2os4w23/armeabi-v7a/CMakeFiles/rebuild_cache.dir

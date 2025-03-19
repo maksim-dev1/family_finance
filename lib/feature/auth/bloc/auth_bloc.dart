@@ -64,18 +64,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     try {
       final refreshToken = await _tokenStorage.getRefreshToken();
       if (refreshToken == null || refreshToken.isEmpty) {
-        emit(const AuthState.unAuntificatid());
+        emit(const AuthState.unAuntificatid(),);
         return;
       }
       final authResponse = await _authRepository.refreshToken(
-        refreshToken: refreshToken,
+        refreshToken: RefreshTokenEntity(refreshToken: refreshToken,),
       );
 
       await _tokenStorage.saveTokens(
-          authResponse.accessToken, authResponse.refreshToken);
-      emit(AuthState.auntificatid());
+          authResponse.accessToken, authResponse.refreshToken,);
+      emit(AuthState.auntificatid(),);
     } catch (e) {
-      emit(const AuthState.unAuntificatid());
+      emit(const AuthState.unAuntificatid(),);
     }
   }
 
@@ -90,9 +90,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required Emitter<AuthState> emit,
   }) async {
     try {
-      await _authRepository.register(authRegisterRequest: authRegisterRequest);
+      await _authRepository.register(authRegisterRequest: authRegisterRequest,);
     } catch (e) {
-      emit(AuthState.unAuntificatid());
+      emit(AuthState.unAuntificatid(),);
     }
   }
 
@@ -107,9 +107,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required Emitter<AuthState> emit,
   }) async {
     try {
-      await _authRepository.login(authLoginRequest: authLoginRequest);
+      await _authRepository.login(authLoginRequest: AuthLoginRequestEntity(email: authLoginRequest,),);
     } catch (e) {
-      emit(AuthState.unAuntificatid());
+      emit(AuthState.unAuntificatid(),);
     }
   }
 
@@ -133,9 +133,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await _tokenStorage.saveTokens(
           authResponse.accessToken, authResponse.refreshToken);
 
-      emit(AuthState.auntificatid());
+      emit(AuthState.auntificatid(),);
     } catch (e) {
-      emit(AuthState.unAuntificatid());
+      emit(AuthState.unAuntificatid(),);
     }
   }
 

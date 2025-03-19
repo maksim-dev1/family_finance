@@ -37,7 +37,7 @@ class _AuthHttpApi implements AuthHttpApi {
   }
 
   @override
-  Future<void> login({required String body}) async {
+  Future<void> login({required AuthLoginRequestDTO body}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -83,7 +83,7 @@ class _AuthHttpApi implements AuthHttpApi {
   }
 
   @override
-  Future<AuthTokenDTO> refreshToken({required String body}) async {
+  Future<AuthTokenDTO> refreshToken({required RefreshTokenDTO body}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -110,11 +110,11 @@ class _AuthHttpApi implements AuthHttpApi {
   }
 
   @override
-  Future<AuthTokenDTO> logout({required String body}) async {
+  Future<AuthTokenDTO> logout() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<AuthTokenDTO>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(

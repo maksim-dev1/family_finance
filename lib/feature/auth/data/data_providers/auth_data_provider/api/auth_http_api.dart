@@ -35,7 +35,7 @@ abstract class AuthHttpApi {
   /// - [body] - DTO с данными авторизации.
   @POST('/auth/login')
   Future<void> login({
-    @Body() required String body,
+    @Body() required AuthLoginRequestDTO body,
   });
 
   /// Проверка кода подтверждения.
@@ -59,18 +59,14 @@ abstract class AuthHttpApi {
   /// Возвращает обновленные токены доступа.
   @POST('/auth/refresh')
   Future<AuthTokenDTO> refreshToken({
-    @Body() required String body,
+    @Body() required RefreshTokenDTO body,
   });
 
   /// Выход пользователя из системы.
   ///
   /// Отправляет refresh-токен на сервер для его аннулирования.
   ///
-  /// - [body] - DTO с refresh-токеном.
-  ///
   /// Возвращает статус операции.
   @POST('/auth/logout')
-  Future<AuthTokenDTO> logout({
-    @Body() required String body,
-  });
+  Future<AuthTokenDTO> logout();
 }

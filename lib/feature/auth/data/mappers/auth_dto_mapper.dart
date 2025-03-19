@@ -11,13 +11,21 @@ abstract class AuthRegisterDTOMapper {
   }
 }
 
-// abstract class AuthLoginDTOMapper {
-//   static AuthLoginRequestDTO fromEntity({required AuthLoginRequestEntity entity}) {
-//     return AuthLoginRequestDTO(
-//       email: entity.email,
-//     );
-//   }
-// }
+abstract class AuthLoginRequestDTOMapper {
+  static AuthLoginRequestDTO fromEntity({required AuthLoginRequestEntity entity}) {
+    return AuthLoginRequestDTO(
+      email: entity.email,
+    );
+  }
+}
+
+abstract class RefreshTokenDTOMapper {
+  static RefreshTokenDTO fromEntity({required RefreshTokenEntity entity}) {
+    return RefreshTokenDTO(
+      refreshToken: entity.refreshToken,
+    );
+  }
+}
 
 abstract class AuthVerifeDTOMapper {
   static AuthVerifeRequestDTO fromEntity(

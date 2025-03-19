@@ -40,3 +40,25 @@ class AuthTokenEntity with _$AuthTokenEntity {
     required String refreshToken,
   }) = _AuthTokenEntity;
 }
+
+/// Сущность запроса на вход в систему.
+///
+/// Используется для входа по [email].
+///
+/// - [email] - электронная почта пользователя.
+@freezed
+class AuthLoginRequestEntity with _$AuthLoginRequestEntity {
+  const factory AuthLoginRequestEntity({
+    required String email,
+  }) = _AuthLoginRequestEntity;
+}
+
+/// Сущность запроса на обновление токена
+///
+/// - [refreshToken] – токен для обновления access-токена.
+@freezed
+class RefreshTokenEntity with _$RefreshTokenEntity {
+  const factory RefreshTokenEntity({
+    @JsonKey(name: 'refresh_token') required String refreshToken,
+  }) = _RefreshTokenEntity;
+}
